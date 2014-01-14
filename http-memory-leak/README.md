@@ -11,15 +11,24 @@ http://stackoverflow.com/questions/21080642/memory-leak-in-go-http-standard-libr
 1. 先进行200并发的测试
 ```
 go build  
-GODEBUG=gctrace=1 ./http-memory-leak  
-ab -k -n10000000 -c200 http://localhost:1234/hello  
 ```  
+```
+GODEBUG=gctrace=1 ./http-memory-leak  
+```  
+```  
+ab -k -n10000000 -c200 http://localhost:1234/hello
+```
+
 2. 4000并发
 ```
 go build  
-GODEBUG=gctrace=1 ./http-memory-leak  
-ab -k -n10000000 -c200 http://localhost:1234/hello  
 ```  
+```
+GODEBUG=gctrace=1 ./http-memory-leak  
+```  
+```  
+ab -k -n10000000 -c4000 http://localhost:1234/hello
+```
 
 测试环境
 ------------
